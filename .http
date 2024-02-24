@@ -1,0 +1,26 @@
+@url=http://localhost:5033
+@clienteId = 5
+
+POST http://localhost:5033/clientes/{{clienteId}}/transacoes
+Content-Type: application/json
+
+{
+    "valor" : 500,
+    "tipo" : "c",
+    "descricao" : "pix 2"
+}
+
+###
+
+POST http://localhost:5033/clientes/{{clienteId}}/transacoes
+Content-Type: application/json
+
+{
+    "valor" : 500,
+    "tipo" : "d",
+    "descricao" : "pix 2"
+}
+
+###
+
+GET http://localhost:5033/clientes/{{clienteId}}/extrato
