@@ -13,7 +13,7 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 });
 
 builder.Services.AddNpgsqlDataSource(
-    builder.Configuration.GetConnectionString("Rinha")!
+   Environment.GetEnvironmentVariable("DB_CONNECTION_STRING") ?? "CONNECTION STRING ERRO"
 );
 
 var app = builder.Build();
